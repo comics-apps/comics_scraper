@@ -1,10 +1,21 @@
 source 'https://rubygems.org'
 
-gem 'dotenv'
+# Application framework
 gem 'dry-system'
+
+# Database persistence
 gem 'pg'
 gem 'rom-sql'
-gem 'rspec'
+
+# Application dependencies
+gem 'dotenv'
 gem 'rubocop'
-gem 'vcr'
-gem 'webmock'
+
+group :development, :test do
+  gem 'rspec'
+end
+
+group :test do
+  gem 'vcr'
+  gem 'webmock'
+end

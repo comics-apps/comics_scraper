@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'dotenv'
 gem 'dry-system'
+gem 'pg'
+gem 'rom-sql'
 gem 'rspec'
 gem 'rubocop'
 gem 'vcr'

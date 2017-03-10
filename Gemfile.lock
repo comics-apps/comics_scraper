@@ -4,6 +4,8 @@ GEM
     addressable (2.5.0)
       public_suffix (~> 2.0, >= 2.0.2)
     ast (2.3.0)
+    comic_vine-api (0.1.0)
+      faraday
     concurrent-ruby (1.0.5)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
@@ -39,8 +41,11 @@ GEM
       dry-equalizer (~> 0.2)
       dry-logic (~> 0.4, >= 0.4.0)
       inflecto (~> 0.0.0, >= 0.0.2)
+    faraday (0.11.0)
+      multipart-post (>= 1.2, < 3)
     hashdiff (0.3.2)
     inflecto (0.0.2)
+    multipart-post (2.0.0)
     parser (2.4.0.0)
       ast (~> 2.2)
     pg (0.19.0)
@@ -98,6 +103,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  comic_vine-api
   dotenv
   dry-system
   pg

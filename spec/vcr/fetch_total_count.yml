@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://comicvine.gamespot.com/api/origins/?api_key=<API_KEY>&field_list=id&format=json&limit=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.8.0
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Powered-By:
+      - PHP/5.6.6
+      Set-Cookie:
+      - device_view=full; expires=Mon, 10-Apr-2017 21:19:05 GMT; Max-Age=2674800;
+        path=/; httponly
+      - satcv=b7b0f4437f829202fb01b73fd0575877; path=/; domain=.comicvine.gamespot.com;
+        HttpOnly
+      Cache-Control:
+      - no-cache
+      Date:
+      - Fri, 10 Mar 2017 22:19:05 GMT
+      X-Phoenix-Cache-Expires:
+      - 03-10-2017 14:24:05
+      X-Phoenix-Cached:
+      - 'false'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":"OK","limit":1,"offset":0,"number_of_page_results":1,"number_of_total_results":10,"status_code":1,"results":[{"id":1}],"version":"1.0"}'
+    http_version: 
+  recorded_at: Fri, 10 Mar 2017 22:19:05 GMT
+recorded_with: VCR 3.0.3

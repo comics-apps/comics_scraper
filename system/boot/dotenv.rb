@@ -1,6 +1,6 @@
 ComicsScraper.finalize(:dotenv) do |_container|
   init do
     require 'dotenv'
-    Dotenv.load!
+    Dotenv.load
   end
 end

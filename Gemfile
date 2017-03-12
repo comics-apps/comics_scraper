@@ -5,6 +5,7 @@ gem 'dry-system'
 
 # Database persistence
 gem 'pg'
+gem 'rom-repository'
 gem 'rom-sql'
 
 # Application dependencies

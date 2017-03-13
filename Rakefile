@@ -13,4 +13,9 @@ namespace :comic_vine do
     ComicsScraper['comic_vine.prepare_collection_jobs']
       .call(api_key: ENV['COMIC_VINE_API_KEY'])
   end
+
+  task :prepare_collections_from, [:date] => ['db:setup'] do |_task, args|
+    ComicsScraper['comic_vine.prepare_collection_jobs']
+      .call(api_key: ENV['COMIC_VINE_API_KEY'], date: args[:date])
+  end
 end

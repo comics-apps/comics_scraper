@@ -1,0 +1,99 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://comicvine.gamespot.com/api/movies/?api_key=<API_KEY>&field_list=id&filter=date_added:2017-01-01%7C2017-03-13&format=json&limit=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.8.0
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Powered-By:
+      - PHP/5.6.6
+      Set-Cookie:
+      - device_view=full; expires=Thu, 13-Apr-2017 08:23:36 GMT; Max-Age=2678400;
+        path=/; httponly
+      - satcv=bd15b9accad15db2c01a25e71a8a40e7; path=/; domain=.comicvine.gamespot.com;
+        HttpOnly
+      Cache-Control:
+      - no-cache
+      Date:
+      - Mon, 13 Mar 2017 08:23:36 GMT
+      X-Phoenix-Cache-Expires:
+      - 03-13-2017 01:28:36
+      X-Phoenix-Cached:
+      - 'false'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":"OK","limit":1,"offset":0,"number_of_page_results":1,"number_of_total_results":2,"status_code":1,"results":[{"id":2236}],"version":"1.0"}'
+    http_version: 
+  recorded_at: Mon, 13 Mar 2017 08:23:36 GMT
+- request:
+    method: get
+    uri: http://comicvine.gamespot.com/api/movies/?api_key=<API_KEY>&field_list=id&filter=date_last_updated:2017-01-01%7C2017-03-13&format=json&limit=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.8.0
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Powered-By:
+      - PHP/5.6.6
+      Set-Cookie:
+      - device_view=full; expires=Thu, 13-Apr-2017 08:23:37 GMT; Max-Age=2678400;
+        path=/; httponly
+      - satcv=74972351018d91f2af5fb7fe12d8ebe6; path=/; domain=.comicvine.gamespot.com;
+        HttpOnly
+      Cache-Control:
+      - no-cache
+      Date:
+      - Mon, 13 Mar 2017 08:23:37 GMT
+      X-Phoenix-Cache-Expires:
+      - 03-13-2017 01:28:37
+      X-Phoenix-Cached:
+      - 'false'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":"OK","limit":1,"offset":0,"number_of_page_results":1,"number_of_total_results":3,"status_code":1,"results":[{"id":1}],"version":"1.0"}'
+    http_version: 
+  recorded_at: Mon, 13 Mar 2017 08:23:37 GMT
+recorded_with: VCR 3.0.3

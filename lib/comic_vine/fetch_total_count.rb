@@ -1,10 +1,14 @@
+require 'import'
+
 module ComicVine
   class FetchTotalCount
-    def call(api_key:, resource:, date_added: nil, date_last_updated: nil)
+    include Import['api_keys']
+
+    def call(resource:, date_added: nil, date_last_updated: nil)
       arguments = prepare_arguments(date_added, date_last_updated)
 
       ComicVine::Api
-        .new(api_key)
+        .new(api_keys[0])
         .send(resource, **arguments)
         .number_of_total_results
     end

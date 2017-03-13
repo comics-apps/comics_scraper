@@ -5,8 +5,7 @@ module ComicVine
     include Import['comic_vine.collections', 'comic_vine.fetch_total_count',
                    'persistence.rom']
 
-    def call(api_key:, date: nil)
-      @api_key = api_key
+    def call(date: nil)
       @date = date
       @job_repo = job_repo_with_cleaning
 
@@ -46,7 +45,7 @@ module ComicVine
     end
 
     def get_total_count(collection, date_field = nil)
-      arguments = { api_key: @api_key, resource: collection }
+      arguments = { resource: collection }
       arguments = arguments.merge(date_field => @date) if date_field
       fetch_total_count.call(**arguments)
     end

@@ -1,3 +1,4 @@
+require 'timecop'
 require 'vcr'
 require 'webmock'
 
@@ -28,6 +29,14 @@ end
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
+  config.before do
+    Timecop.freeze(Time.local(2017, 3, 1))
+  end
+
+  config.after do
+    Timecop.return
+  end
+
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.

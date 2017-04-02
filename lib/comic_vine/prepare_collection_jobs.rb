@@ -2,7 +2,8 @@ require 'import'
 
 module ComicVine
   class PrepareCollectionJobs
-    include Import['comic_vine.collections', 'comic_vine.fetch_total_count',
+    include Import['comic_vine.collections',
+                   'comic_vine.fetch_collection.total_count',
                    'persistence.rom']
 
     def call(date: nil)
@@ -47,7 +48,7 @@ module ComicVine
     def get_total_count(collection, date_field = nil)
       arguments = { resource: collection }
       arguments = arguments.merge(date_field => @date) if date_field
-      fetch_total_count.call(**arguments)
+      total_count.call(**arguments)
     end
 
     def job_attributes(collection, page, date_field = nil)

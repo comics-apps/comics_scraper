@@ -19,7 +19,8 @@ ComicsScraper.namespace(:persistence) do |container|
 
     start do
       config = container['persistence.config']
-      config.auto_registration(container.root.join('lib/persistence'), namespace: false)
+      config.auto_registration(container.root.join('lib/persistence'),
+                               namespace: false)
       Dir.glob('lib/persistence/repositories/*.rb').each do |f|
         require f.gsub('lib/', '')
       end

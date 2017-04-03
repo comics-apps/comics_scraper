@@ -7,7 +7,7 @@ RSpec.describe ComicVine::PrepareCollectionJobs do
     context 'without date' do
       before do
         allow_any_instance_of(ComicVine::Collections)
-          .to receive(:call).and_return(%i(origins))
+          .to receive(:call).and_return(%i[origins])
       end
 
       it 'creates collection job' do
@@ -18,7 +18,7 @@ RSpec.describe ComicVine::PrepareCollectionJobs do
           expect(job.type).to eq('comic_vine_collection')
           expect(job.priority).to eq(0)
           expect(job.settings.keys)
-            .to match_array(%w(offset collection))
+            .to match_array(%w[offset collection])
         end
       end
     end
@@ -26,7 +26,7 @@ RSpec.describe ComicVine::PrepareCollectionJobs do
     context 'with date' do
       before do
         allow_any_instance_of(ComicVine::Collections)
-          .to receive(:call).and_return(%i(movies))
+          .to receive(:call).and_return(%i[movies])
       end
 
       it 'creates collection job' do
@@ -42,7 +42,7 @@ RSpec.describe ComicVine::PrepareCollectionJobs do
           settings_attributes = jobs.to_a.map { |job| job.settings.keys }
                                     .flatten.uniq
           expect(settings_attributes)
-            .to match_array(%w(offset collection date_added date_last_updated))
+            .to match_array(%w[offset collection date_added date_last_updated])
         end
       end
     end

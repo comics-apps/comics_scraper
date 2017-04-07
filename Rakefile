@@ -5,6 +5,12 @@ namespace :db do
   task :setup do
     require_relative 'system/boot'
   end
+
+  namespace :mongo do
+    task recreate_indexes: ['db:setup'] do
+      ComicsScraper['rake.create_mongo_indexes'].call
+    end
+  end
 end
 
 namespace :comic_vine do

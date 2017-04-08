@@ -1,3 +1,5 @@
+require 'yaml'
+
 require 'import'
 
 module ComicVine
@@ -16,7 +18,27 @@ module ComicVine
 
     def fetch_data(id:, resource:)
       sleep(1)
-      fetch_resource.call(id: id, resource: resource)
+      data = make_call(id, resource)
+      return data if data && !data.empty?
+
+      data = {}
+      field_list(resource).each do |field|
+        sleep(1)
+        part_data = make_call(id, resource, field)
+        data[field] = part_data[field] unless part_data.empty?
+      end
+      data
+    end
+
+    def field_list(resource)
+      YAML.load_file("config/comic_vine_#{resource}_fields.yml")
+    end
+
+    def make_call(id, resource, field_list = nil)
+      fetch_resource.call(id: id, resource: resource, field_list: field_list)
+    rescue => e
+      puts e
+      field_list ? {} : nil
     end
 
     def create_or_update_data(resource, data)

@@ -5,10 +5,13 @@ module ComicVine
     include Import['api_keys']
 
     def call(id:, resource:, **arguments)
-      ComicVine::Api
-        .new(api_keys[0])
-        .send(resource, id, **arguments)
-        .results
+      request = ComicVine::Api
+                .new(api_keys[0])
+                .send(resource, id, **arguments)
+
+      return {} if [500, 502].include?(request.status)
+      return {} if request.results.is_a?(Array) && request.results.empty?
+      request.results
     end
   end
 end

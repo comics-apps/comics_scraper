@@ -10,7 +10,7 @@ module ComicVine
         arguments = prepare_arguments(date_added, date_last_updated)
 
         ComicVine::Api
-          .new(api_keys[0])
+          .new(api_keys[:comic_vine])
           .send(resource, **arguments)
           .number_of_total_results
       end

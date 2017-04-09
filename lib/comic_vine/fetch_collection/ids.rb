@@ -10,7 +10,7 @@ module ComicVine
         arguments = prepare_arguments(offset, date_added, date_last_updated)
 
         ComicVine::Api
-          .new(api_keys[0])
+          .new(api_keys[:comic_vine])
           .send(resource, **arguments)
           .results
           .map { |element| element['id'] }

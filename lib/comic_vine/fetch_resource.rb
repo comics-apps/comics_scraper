@@ -6,7 +6,7 @@ module ComicVine
 
     def call(id:, resource:, **arguments)
       request = ComicVine::Api
-                .new(api_keys[0])
+                .new(api_keys[:comic_vine])
                 .send(resource, id, **arguments)
 
       return {} if [500, 502].include?(request.status)

@@ -12,6 +12,7 @@ gem 'rom-sql'
 # Application dependencies
 gem 'comic_vine-api'
 gem 'dotenv'
+gem 'marvel-api'
 gem 'rake'
 gem 'rubocop'
 

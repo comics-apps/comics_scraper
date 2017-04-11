@@ -61,6 +61,8 @@ GEM
     hashdiff (0.3.2)
     ice_nine (0.11.2)
     inflecto (0.0.2)
+    marvel-api (0.1.0)
+      faraday
     mongo (2.4.1)
       bson (>= 4.2.1, < 5.0.0)
     multipart-post (2.0.0)
@@ -132,6 +134,7 @@ DEPENDENCIES
   comic_vine-api
   dotenv
   dry-system
+  marvel-api
   pg
   rake
   rom-mongo!

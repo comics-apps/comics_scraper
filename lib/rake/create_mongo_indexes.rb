@@ -2,8 +2,7 @@ require 'import'
 
 module Rake
   class CreateMongoIndexes
-    include Import['comic_vine.collections',
-                   'persistence.rom']
+    include Import['persistence.rom']
 
     def call
       indexes.each do |settings|
@@ -17,9 +16,13 @@ module Rake
     private
 
     def indexes
-      collections.call.map do |collection_name|
+      vendor_indexes(:comic_vine) + vendor_indexes(:marvel)
+    end
+
+    def vendor_indexes(vendor)
+      ComicsScraper["#{vendor}.collections"].call.map do |collection_name|
         {
-          collection: "comic_vine_#{collection_name}".to_sym,
+          collection: "#{vendor}_#{collection_name}".to_sym,
           field: { external_id: 1 },
           options: { unique: true }
         }

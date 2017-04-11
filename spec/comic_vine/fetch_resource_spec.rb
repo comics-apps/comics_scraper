@@ -5,7 +5,7 @@ RSpec.describe ComicVine::FetchResource do
 
   describe '#call' do
     it 'returns single resource' do
-      VCR.use_cassette('fetch_resource') do
+      VCR.use_cassette('comicvine_fetch_resource') do
         result = action.call(
           id: 1, resource: :origin, field_list: 'id'
         )

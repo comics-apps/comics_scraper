@@ -11,7 +11,7 @@ RSpec.describe ComicVine::PrepareCollectionJobs do
       end
 
       it 'creates collection job' do
-        VCR.use_cassette('prepare_collection_jobs') do
+        VCR.use_cassette('comicvine_prepare_collection_jobs') do
           ComicsScraper['comic_vine.prepare_collection_jobs'].call
 
           expect(jobs.count).to eq(1)
@@ -30,7 +30,7 @@ RSpec.describe ComicVine::PrepareCollectionJobs do
       end
 
       it 'creates collection job' do
-        VCR.use_cassette('prepare_collection_jobs_movies') do
+        VCR.use_cassette('comicvine_prepare_collection_jobs_movies') do
           ComicsScraper['comic_vine.prepare_collection_jobs'].call(
             date: '2017-01-01'
           )

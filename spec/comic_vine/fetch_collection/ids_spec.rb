@@ -6,7 +6,7 @@ RSpec.describe ComicVine::FetchCollection::Ids do
   describe '#call' do
     context 'without date resource' do
       it 'returns ids' do
-        VCR.use_cassette('fetch_ids') do
+        VCR.use_cassette('comicvine_fetch_ids') do
           result = action.call(
             offset: 0, resource: :origins
           )
@@ -17,7 +17,7 @@ RSpec.describe ComicVine::FetchCollection::Ids do
 
     context 'with added date' do
       it 'returns ids' do
-        VCR.use_cassette('fetch_ids_date_added') do
+        VCR.use_cassette('comicvine_fetch_ids_date_added') do
           result = action.call(
             offset: 0, resource: :origins, date_added: '2017-01-01'
           )
@@ -28,7 +28,7 @@ RSpec.describe ComicVine::FetchCollection::Ids do
 
     context 'without last updated date' do
       it 'returns ids' do
-        VCR.use_cassette('fetch_ids_date_last_updated') do
+        VCR.use_cassette('comicvine_fetch_ids_date_last_updated') do
           result = action.call(
             offset: 0, resource: :origins, date_last_updated: '2017-01-01'
           )

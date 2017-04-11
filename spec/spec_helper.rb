@@ -1,6 +1,9 @@
+require 'logger'
 require 'timecop'
 require 'vcr'
 require 'webmock'
+
+ENV['MONGO_LOGGER_LEVEL'] = ::Logger::WARN.to_s
 
 require_relative '../system/boot'
 

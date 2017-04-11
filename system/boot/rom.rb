@@ -6,6 +6,10 @@ ComicsScraper.namespace(:persistence) do |container|
       require 'rom-repository'
       require 'rom-sql'
 
+      if ENV['MONGO_LOGGER_LEVEL']
+        Mongo::Logger.level = ENV['MONGO_LOGGER_LEVEL'].to_i
+      end
+
       Sequel.database_timezone = :utc
       Sequel.application_timezone = :local
 

@@ -41,6 +41,9 @@ end
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   config.before do
+    rom = ComicsScraper['persistence.rom']
+    JobRepo.new(rom).delete
+
     Timecop.freeze(Time.utc(2017, 3, 1))
   end
 

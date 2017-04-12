@@ -34,3 +34,15 @@ namespace :comic_vine do
     ComicsScraper['comic_vine.rake.fetch_elements'].call
   end
 end
+
+namespace :marvel do
+  desc 'Prepare collection jobs'
+  task prepare_collections: ['db:setup'] do
+    ComicsScraper['marvel.prepare_collection_jobs'].call
+  end
+
+  desc 'Prepare collection jobs from specified date'
+  task :prepare_collections_from, [:date] => ['db:setup'] do |_task, args|
+    ComicsScraper['marvel.prepare_collection_jobs'].call(date: args[:date])
+  end
+end

@@ -1,6 +1,6 @@
 require 'import'
 
-module Rake
+module Cli
   class CreateMongoIndexes
     include Import['persistence.rom']
 
@@ -16,17 +16,22 @@ module Rake
     private
 
     def indexes
-      vendor_indexes(:comic_vine) + vendor_indexes(:marvel)
+      vendor_indexes(vendor: :comic_vine) +
+        vendor_indexes(vendor: :marvel)
     end
 
-    def vendor_indexes(vendor)
-      ComicsScraper["#{vendor}.collections"].call.map do |collection_name|
+    def vendor_indexes(vendor:)
+      collections(vendor: vendor).map do |api_collection_name|
         {
-          collection: "#{vendor}_#{collection_name}".to_sym,
+          collection: :"#{vendor}_#{api_collection_name}".to_sym,
           field: { external_id: 1 },
           options: { unique: true }
         }
       end
+    end
+
+    def collections(vendor:)
+      ComicsScraper[:"#{vendor}.collections"].call
     end
 
     def database

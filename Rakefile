@@ -8,7 +8,7 @@ namespace :db do
 
   namespace :mongo do
     task recreate_indexes: ['db:setup'] do
-      ComicsScraper['rake.create_mongo_indexes'].call
+      ComicsScraper['cli.create_mongo_indexes'].call
     end
   end
 end

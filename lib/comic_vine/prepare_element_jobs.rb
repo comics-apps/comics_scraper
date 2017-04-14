@@ -2,7 +2,7 @@ require 'import'
 
 module ComicVine
   class PrepareElementJobs
-    include Import['comic_vine.fetch_collection.ids',
+    include Import['comic_vine.api.fetch_ids',
                    'persistence.rom']
 
     def call(job:)
@@ -19,11 +19,11 @@ module ComicVine
 
     def resource_ids(job)
       sleep(1)
-      ids.call(
+      fetch_ids.call(
         resource: job.settings['collection'],
         offset: job.settings['offset'],
-        date_added: job.settings['date_added'],
-        date_last_updated: job.settings['date_last_updated']
+        added: job.settings['added'],
+        updated: job.settings['updated']
       )
     end
 

@@ -4,7 +4,7 @@ module Marvel
   module Rake
     class FetchCollection
       include Import['base.split_array_to_half',
-                     'marvel.fetch_collection',
+                     'marvel.api.fetch_collection',
                      'persistence.rom']
 
       def call
@@ -28,7 +28,7 @@ module Marvel
           resource: job.settings['collection'],
           limit: 100,
           offset: job.settings['offset'],
-          modified_since: job.settings['modified_since']
+          modified: job.settings['modified']
         )
       end
 
@@ -44,28 +44,28 @@ module Marvel
         JobRepo.new(rom)
       end
 
-      def fetch_and_save(resource:, limit:, offset:, modified_since:)
+      def fetch_and_save(resource:, limit:, offset:, modified:)
         results = fetch_collection.call(
           resource: resource, limit: limit, offset: offset,
-          modified_since: modified_since
+          modified: modified
         )
         results.each do |data|
           create_or_update_data(resource, data)
         end
       rescue => e
         handle_exception(e: e, offset: offset, limit: limit, resource: resource,
-                         modified_since: modified_since)
+                         modified: modified)
       end
 
-      def handle_exception(e:, offset:, limit:, resource:, modified_since:)
+      def handle_exception(e:, offset:, limit:, resource:, modified:)
         puts e
         return if limit == 1
 
         left, right = split_array_to_half.call(offset: offset, limit: limit)
         fetch_and_save(resource: resource, limit: left.size, offset: left[0],
-                       modified_since: modified_since)
+                       modified: modified)
         fetch_and_save(resource: resource, limit: right.size, offset: right[0],
-                       modified_since: modified_since)
+                       modified: modified)
       end
 
       def create_or_update_data(resource, data)

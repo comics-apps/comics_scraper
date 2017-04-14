@@ -4,7 +4,7 @@ require 'import'
 
 module ComicVine
   class SaveResource
-    include Import['comic_vine.fetch_resource',
+    include Import['comic_vine.api.fetch_resource',
                    'persistence.rom']
 
     def call(job:)

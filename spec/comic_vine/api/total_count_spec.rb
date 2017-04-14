@@ -1,13 +1,13 @@
-RSpec.describe ComicVine::FetchCollection::TotalCount do
-  let(:action) do
-    ComicsScraper['comic_vine.fetch_collection.total_count']
+RSpec.describe ComicVine::Api::TotalCount do
+  let(:service) do
+    ComicsScraper['comic_vine.api.total_count']
   end
 
   describe '#call' do
     context 'without date resource' do
       it 'returns total count' do
         VCR.use_cassette('comicvine_fetch_total_count') do
-          result = action.call(
+          result = service.call(
             resource: :origins
           )
           expect(result).to eq(10)
@@ -21,14 +21,14 @@ RSpec.describe ComicVine::FetchCollection::TotalCount do
         count = nil
 
         VCR.use_cassette('comicvine_fetch_total_count_issues') do
-          total_count = action.call(
+          total_count = service.call(
             resource: :issues
           )
         end
 
         VCR.use_cassette('comicvine_fetch_total_count_issues_date_added') do
-          count = action.call(
-            resource: :issues, date_added: '2017-01-01'
+          count = service.call(
+            resource: :issues, added: '2017-01-01'
           )
         end
 
@@ -42,15 +42,15 @@ RSpec.describe ComicVine::FetchCollection::TotalCount do
         count = nil
 
         VCR.use_cassette('comicvine_fetch_total_count_issues') do
-          total_count = action.call(
+          total_count = service.call(
             resource: :issues
           )
         end
 
         label = 'comicvine_fetch_total_count_issues_date_last_updated'
         VCR.use_cassette(label) do
-          count = action.call(
-            resource: :issues, date_last_updated: '2017-01-01'
+          count = service.call(
+            resource: :issues, updated: '2017-01-01'
           )
         end
 

@@ -4,7 +4,7 @@ module Cli
   module ComicVine
     class TotalCount
       include Import['comic_vine.collections',
-                     'comic_vine.fetch_collection.total_count',
+                     'comic_vine.api.total_count',
                      'persistence.rom']
 
       def call

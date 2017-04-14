@@ -5,7 +5,7 @@ module Marvel
     include ::Base::PrepareCollectionJobs
 
     include Import['marvel.collections',
-                   'marvel.fetch_collection.total_count',
+                   'marvel.api.total_count',
                    'persistence.rom']
 
     def call(date: nil)
@@ -24,7 +24,7 @@ module Marvel
 
     def perform_collection_with_date
       each_collection do |collection|
-        create_collection_jobs(collection, :modified_since)
+        create_collection_jobs(collection, :modified)
       end
     end
   end

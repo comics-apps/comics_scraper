@@ -5,7 +5,7 @@ module ComicVine
     include ::Base::PrepareCollectionJobs
 
     include Import['comic_vine.collections',
-                   'comic_vine.fetch_collection.total_count',
+                   'comic_vine.api.total_count',
                    'persistence.rom']
 
     def call(date: nil)
@@ -24,8 +24,8 @@ module ComicVine
 
     def perform_collection_with_date
       each_collection do |collection|
-        create_collection_jobs(collection, :date_added)
-        create_collection_jobs(collection, :date_last_updated)
+        create_collection_jobs(collection, :added)
+        create_collection_jobs(collection, :updated)
       end
     end
   end

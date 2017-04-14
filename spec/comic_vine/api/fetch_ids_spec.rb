@@ -1,13 +1,13 @@
-RSpec.describe ComicVine::FetchCollection::Ids do
-  let(:action) do
-    ComicsScraper['comic_vine.fetch_collection.ids']
+RSpec.describe ComicVine::Api::FetchIds do
+  let(:service) do
+    ComicsScraper['comic_vine.api.fetch_ids']
   end
 
   describe '#call' do
     context 'without date resource' do
       it 'returns ids' do
         VCR.use_cassette('comicvine_fetch_ids') do
-          result = action.call(
+          result = service.call(
             offset: 0, resource: :origins
           )
           expect(result).to match_array((1..10).to_a)
@@ -18,8 +18,8 @@ RSpec.describe ComicVine::FetchCollection::Ids do
     context 'with added date' do
       it 'returns ids' do
         VCR.use_cassette('comicvine_fetch_ids_date_added') do
-          result = action.call(
-            offset: 0, resource: :origins, date_added: '2017-01-01'
+          result = service.call(
+            offset: 0, resource: :origins, added: '2017-01-01'
           )
           expect(result).to be_an(Array)
         end
@@ -29,8 +29,8 @@ RSpec.describe ComicVine::FetchCollection::Ids do
     context 'without last updated date' do
       it 'returns ids' do
         VCR.use_cassette('comicvine_fetch_ids_date_last_updated') do
-          result = action.call(
-            offset: 0, resource: :origins, date_last_updated: '2017-01-01'
+          result = service.call(
+            offset: 0, resource: :origins, updated: '2017-01-01'
           )
           expect(result).to be_an(Array)
         end

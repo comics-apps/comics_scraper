@@ -42,7 +42,7 @@ RSpec.describe Marvel::PrepareCollectionJobs do
           settings_attributes = jobs.to_a.map { |job| job.settings.keys }
                                     .flatten.uniq
           expect(settings_attributes)
-            .to match_array(%w[offset collection modified_since])
+            .to match_array(%w[offset collection modified])
         end
       end
     end

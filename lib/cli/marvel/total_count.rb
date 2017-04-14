@@ -4,7 +4,7 @@ module Cli
   module Marvel
     class TotalCount
       include Import['marvel.collections',
-                     'marvel.fetch_collection.total_count',
+                     'marvel.api.total_count',
                      'persistence.rom']
 
       def call

@@ -1,13 +1,13 @@
-RSpec.describe Marvel::FetchCollection::TotalCount do
-  let(:action) do
-    ComicsScraper['marvel.fetch_collection.total_count']
+RSpec.describe Marvel::Api::TotalCount do
+  let(:service) do
+    ComicsScraper['marvel.api.total_count']
   end
 
   describe '#call' do
     context 'without date resource' do
       it 'returns total count' do
         VCR.use_cassette('marvel_fetch_total_count') do
-          result = action.call(
+          result = service.call(
             resource: :events
           )
           expect(result).to eq(75)
@@ -21,15 +21,15 @@ RSpec.describe Marvel::FetchCollection::TotalCount do
         count = nil
 
         VCR.use_cassette('marvel_fetch_total_count_comics') do
-          total_count = action.call(
+          total_count = service.call(
             resource: :comics
           )
         end
 
         label = 'marvel_fetch_total_count_comics_date_modified_since'
         VCR.use_cassette(label) do
-          count = action.call(
-            resource: :comics, modified_since: '2017-01-01'
+          count = service.call(
+            resource: :comics, modified: '2017-01-01'
           )
         end
 

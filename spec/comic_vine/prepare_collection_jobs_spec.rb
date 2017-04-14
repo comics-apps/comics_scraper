@@ -42,7 +42,7 @@ RSpec.describe ComicVine::PrepareCollectionJobs do
           settings_attributes = jobs.to_a.map { |job| job.settings.keys }
                                     .flatten.uniq
           expect(settings_attributes)
-            .to match_array(%w[offset collection date_added date_last_updated])
+            .to match_array(%w[offset collection added updated])
         end
       end
     end

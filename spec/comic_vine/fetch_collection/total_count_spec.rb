@@ -47,7 +47,8 @@ RSpec.describe ComicVine::FetchCollection::TotalCount do
           )
         end
 
-        VCR.use_cassette('comicvine_fetch_total_count_issues_date_last_updated') do
+        label = 'comicvine_fetch_total_count_issues_date_last_updated'
+        VCR.use_cassette(label) do
           count = action.call(
             resource: :issues, date_last_updated: '2017-01-01'
           )

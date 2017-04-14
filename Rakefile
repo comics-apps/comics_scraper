@@ -45,4 +45,9 @@ namespace :marvel do
   task :prepare_collections_from, [:date] => ['db:setup'] do |_task, args|
     ComicsScraper['marvel.prepare_collection_jobs'].call(date: args[:date])
   end
+
+  desc 'Fetch collections based on element jobs'
+  task fetch_collections: ['db:setup'] do
+    ComicsScraper['marvel.rake.fetch_collection'].call
+  end
 end

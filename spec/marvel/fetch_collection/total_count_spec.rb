@@ -26,7 +26,8 @@ RSpec.describe Marvel::FetchCollection::TotalCount do
           )
         end
 
-        VCR.use_cassette('marvel_fetch_total_count_comics_date_modified_since') do
+        label = 'marvel_fetch_total_count_comics_date_modified_since'
+        VCR.use_cassette(label) do
           count = action.call(
             resource: :comics, modified_since: '2017-01-01'
           )

@@ -1,13 +1,12 @@
 require 'import'
 
 module Marvel
-  module FetchCollection
+  class FetchCollection
     class TotalCount
       include Import['api_keys']
 
       def call(resource:, modified_since: nil)
         arguments = prepare_arguments(modified_since)
-
         Marvel::Api
           .new(api_keys[:marvel][:public_key], api_keys[:marvel][:private_key])
           .send(resource, **arguments)

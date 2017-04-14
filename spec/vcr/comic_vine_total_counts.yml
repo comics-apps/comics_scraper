@@ -1,0 +1,768 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://comicvine.gamespot.com/api/characters/?api_key=<API_KEY>&field_list=id&format=json&limit=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.8.0
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Powered-By:
+      - PHP/5.6.6
+      Set-Cookie:
+      - device_view=full; expires=Sun, 14-May-2017 19:10:44 GMT; Max-Age=2592000;
+        path=/; httponly
+      - satcv=e6be6d48fa2ca29f95e590b1d541eef1; path=/; domain=.comicvine.gamespot.com;
+        HttpOnly
+      Cache-Control:
+      - no-cache
+      Date:
+      - Fri, 14 Apr 2017 19:10:44 GMT
+      X-Phoenix-Cache-Expires:
+      - 04-14-2017 12:15:44
+      X-Phoenix-Cached:
+      - 'false'
+      Content-Security-Policy-Report-Only:
+      - 'default-src https: blob: ''unsafe-inline'' ''unsafe-eval''; img-src https:
+        data:; form-action https:; block-all-mixed-content; report-uri https://cbsi.report-uri.io/r/default/csp/reportOnly;'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":"OK","limit":1,"offset":0,"number_of_page_results":1,"number_of_total_results":114934,"status_code":1,"results":[{"id":1253}],"version":"1.0"}'
+    http_version: 
+  recorded_at: Wed, 01 Mar 2017 00:00:00 GMT
+- request:
+    method: get
+    uri: https://comicvine.gamespot.com/api/concepts/?api_key=<API_KEY>&field_list=id&format=json&limit=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.8.0
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Powered-By:
+      - PHP/5.6.6
+      Set-Cookie:
+      - device_view=full; expires=Sun, 14-May-2017 19:10:45 GMT; Max-Age=2592000;
+        path=/; httponly
+      - satcv=748227e5954bf65f1c7abc0e74782642; path=/; domain=.comicvine.gamespot.com;
+        HttpOnly
+      Cache-Control:
+      - no-cache
+      Date:
+      - Fri, 14 Apr 2017 19:10:45 GMT
+      X-Phoenix-Cache-Expires:
+      - 04-14-2017 12:15:45
+      X-Phoenix-Cached:
+      - 'false'
+      Content-Security-Policy-Report-Only:
+      - 'default-src https: blob: ''unsafe-inline'' ''unsafe-eval''; img-src https:
+        data:; form-action https:; block-all-mixed-content; report-uri https://cbsi.report-uri.io/r/default/csp/reportOnly;'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":"OK","limit":1,"offset":0,"number_of_page_results":1,"number_of_total_results":1363,"status_code":1,"results":[{"id":35070}],"version":"1.0"}'
+    http_version: 
+  recorded_at: Wed, 01 Mar 2017 00:00:00 GMT
+- request:
+    method: get
+    uri: https://comicvine.gamespot.com/api/episodes/?api_key=<API_KEY>&field_list=id&format=json&limit=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.8.0
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Powered-By:
+      - PHP/5.6.6
+      Set-Cookie:
+      - device_view=full; expires=Sun, 14-May-2017 19:10:46 GMT; Max-Age=2592000;
+        path=/; httponly
+      - satcv=046f99e340adbcab6883a3b0e53a3d5a; path=/; domain=.comicvine.gamespot.com;
+        HttpOnly
+      Cache-Control:
+      - no-cache
+      Date:
+      - Fri, 14 Apr 2017 19:10:46 GMT
+      X-Phoenix-Cache-Expires:
+      - 04-14-2017 12:15:46
+      X-Phoenix-Cached:
+      - 'false'
+      Content-Security-Policy-Report-Only:
+      - 'default-src https: blob: ''unsafe-inline'' ''unsafe-eval''; img-src https:
+        data:; form-action https:; block-all-mixed-content; report-uri https://cbsi.report-uri.io/r/default/csp/reportOnly;'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":"OK","limit":1,"offset":0,"number_of_page_results":1,"number_of_total_results":21951,"status_code":1,"results":[{"id":1}],"version":"1.0"}'
+    http_version: 
+  recorded_at: Wed, 01 Mar 2017 00:00:00 GMT
+- request:
+    method: get
+    uri: https://comicvine.gamespot.com/api/issues/?api_key=<API_KEY>&field_list=id&format=json&limit=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.8.0
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Powered-By:
+      - PHP/5.6.6
+      Set-Cookie:
+      - device_view=full; expires=Sun, 14-May-2017 19:10:47 GMT; Max-Age=2592000;
+        path=/; httponly
+      - satcv=23f6734141188779cec7aa10a6c4c3ac; path=/; domain=.comicvine.gamespot.com;
+        HttpOnly
+      Cache-Control:
+      - no-cache
+      Date:
+      - Fri, 14 Apr 2017 19:10:47 GMT
+      X-Phoenix-Cache-Expires:
+      - 04-14-2017 12:15:47
+      X-Phoenix-Cached:
+      - 'false'
+      Content-Security-Policy-Report-Only:
+      - 'default-src https: blob: ''unsafe-inline'' ''unsafe-eval''; img-src https:
+        data:; form-action https:; block-all-mixed-content; report-uri https://cbsi.report-uri.io/r/default/csp/reportOnly;'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":"OK","limit":1,"offset":0,"number_of_page_results":1,"number_of_total_results":541604,"status_code":1,"results":[{"id":6}],"version":"1.0"}'
+    http_version: 
+  recorded_at: Wed, 01 Mar 2017 00:00:00 GMT
+- request:
+    method: get
+    uri: https://comicvine.gamespot.com/api/locations/?api_key=<API_KEY>&field_list=id&format=json&limit=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.8.0
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Powered-By:
+      - PHP/5.6.6
+      Set-Cookie:
+      - device_view=full; expires=Sun, 14-May-2017 19:10:48 GMT; Max-Age=2592000;
+        path=/; httponly
+      - satcv=1830fc5cf6501ebcd5ed7d5caa6542b1; path=/; domain=.comicvine.gamespot.com;
+        HttpOnly
+      Cache-Control:
+      - no-cache
+      Date:
+      - Fri, 14 Apr 2017 19:10:48 GMT
+      X-Phoenix-Cache-Expires:
+      - 04-14-2017 12:15:48
+      X-Phoenix-Cached:
+      - 'false'
+      Content-Security-Policy-Report-Only:
+      - 'default-src https: blob: ''unsafe-inline'' ''unsafe-eval''; img-src https:
+        data:; form-action https:; block-all-mixed-content; report-uri https://cbsi.report-uri.io/r/default/csp/reportOnly;'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":"OK","limit":1,"offset":0,"number_of_page_results":1,"number_of_total_results":7294,"status_code":1,"results":[{"id":21766}],"version":"1.0"}'
+    http_version: 
+  recorded_at: Wed, 01 Mar 2017 00:00:00 GMT
+- request:
+    method: get
+    uri: https://comicvine.gamespot.com/api/movies/?api_key=<API_KEY>&field_list=id&format=json&limit=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.8.0
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Powered-By:
+      - PHP/5.6.6
+      Set-Cookie:
+      - device_view=full; expires=Sun, 14-May-2017 19:10:49 GMT; Max-Age=2592000;
+        path=/; httponly
+      - satcv=fc5fe62f6cf871b1eb23b43b63fe19f8; path=/; domain=.comicvine.gamespot.com;
+        HttpOnly
+      Cache-Control:
+      - no-cache
+      Date:
+      - Fri, 14 Apr 2017 19:10:49 GMT
+      X-Phoenix-Cache-Expires:
+      - 04-14-2017 12:15:49
+      X-Phoenix-Cached:
+      - 'false'
+      Content-Security-Policy-Report-Only:
+      - 'default-src https: blob: ''unsafe-inline'' ''unsafe-eval''; img-src https:
+        data:; form-action https:; block-all-mixed-content; report-uri https://cbsi.report-uri.io/r/default/csp/reportOnly;'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":"OK","limit":1,"offset":0,"number_of_page_results":1,"number_of_total_results":2064,"status_code":1,"results":[{"id":1}],"version":"1.0"}'
+    http_version: 
+  recorded_at: Wed, 01 Mar 2017 00:00:00 GMT
+- request:
+    method: get
+    uri: https://comicvine.gamespot.com/api/objects/?api_key=<API_KEY>&field_list=id&format=json&limit=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.8.0
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Powered-By:
+      - PHP/5.6.6
+      Set-Cookie:
+      - device_view=full; expires=Sun, 14-May-2017 19:10:50 GMT; Max-Age=2592000;
+        path=/; httponly
+      - satcv=292e00293231061c421eccb2c70aed88; path=/; domain=.comicvine.gamespot.com;
+        HttpOnly
+      Cache-Control:
+      - no-cache
+      Date:
+      - Fri, 14 Apr 2017 19:10:50 GMT
+      X-Phoenix-Cache-Expires:
+      - 04-14-2017 12:15:50
+      X-Phoenix-Cached:
+      - 'false'
+      Content-Security-Policy-Report-Only:
+      - 'default-src https: blob: ''unsafe-inline'' ''unsafe-eval''; img-src https:
+        data:; form-action https:; block-all-mixed-content; report-uri https://cbsi.report-uri.io/r/default/csp/reportOnly;'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":"OK","limit":1,"offset":0,"number_of_page_results":1,"number_of_total_results":3573,"status_code":1,"results":[{"id":15073}],"version":"1.0"}'
+    http_version: 
+  recorded_at: Wed, 01 Mar 2017 00:00:00 GMT
+- request:
+    method: get
+    uri: https://comicvine.gamespot.com/api/origins/?api_key=<API_KEY>&field_list=id&format=json&limit=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.8.0
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Powered-By:
+      - PHP/5.6.6
+      Set-Cookie:
+      - device_view=full; expires=Sun, 14-May-2017 19:10:51 GMT; Max-Age=2592000;
+        path=/; httponly
+      - satcv=862f05222e63e8bc0e760e850f51757d; path=/; domain=.comicvine.gamespot.com;
+        HttpOnly
+      Cache-Control:
+      - no-cache
+      Date:
+      - Fri, 14 Apr 2017 19:10:51 GMT
+      X-Phoenix-Cache-Expires:
+      - 04-14-2017 12:15:51
+      X-Phoenix-Cached:
+      - 'false'
+      Content-Security-Policy-Report-Only:
+      - 'default-src https: blob: ''unsafe-inline'' ''unsafe-eval''; img-src https:
+        data:; form-action https:; block-all-mixed-content; report-uri https://cbsi.report-uri.io/r/default/csp/reportOnly;'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":"OK","limit":1,"offset":0,"number_of_page_results":1,"number_of_total_results":10,"status_code":1,"results":[{"id":1}],"version":"1.0"}'
+    http_version: 
+  recorded_at: Wed, 01 Mar 2017 00:00:00 GMT
+- request:
+    method: get
+    uri: https://comicvine.gamespot.com/api/people/?api_key=<API_KEY>&field_list=id&format=json&limit=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.8.0
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Powered-By:
+      - PHP/5.6.6
+      Set-Cookie:
+      - device_view=full; expires=Sun, 14-May-2017 19:10:52 GMT; Max-Age=2592000;
+        path=/; httponly
+      - satcv=16905233987d594f9cbcd0d4fc6fcb07; path=/; domain=.comicvine.gamespot.com;
+        HttpOnly
+      Cache-Control:
+      - no-cache
+      Date:
+      - Fri, 14 Apr 2017 19:10:52 GMT
+      X-Phoenix-Cache-Expires:
+      - 04-14-2017 12:15:52
+      X-Phoenix-Cached:
+      - 'false'
+      Content-Security-Policy-Report-Only:
+      - 'default-src https: blob: ''unsafe-inline'' ''unsafe-eval''; img-src https:
+        data:; form-action https:; block-all-mixed-content; report-uri https://cbsi.report-uri.io/r/default/csp/reportOnly;'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":"OK","limit":1,"offset":0,"number_of_page_results":1,"number_of_total_results":43371,"status_code":1,"results":[{"id":1251}],"version":"1.0"}'
+    http_version: 
+  recorded_at: Wed, 01 Mar 2017 00:00:00 GMT
+- request:
+    method: get
+    uri: https://comicvine.gamespot.com/api/powers/?api_key=<API_KEY>&field_list=id&format=json&limit=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.8.0
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Powered-By:
+      - PHP/5.6.6
+      Set-Cookie:
+      - device_view=full; expires=Sun, 14-May-2017 19:10:53 GMT; Max-Age=2592000;
+        path=/; httponly
+      - satcv=aef501932463a84adf0219d9c053bb47; path=/; domain=.comicvine.gamespot.com;
+        HttpOnly
+      Cache-Control:
+      - no-cache
+      Date:
+      - Fri, 14 Apr 2017 19:10:53 GMT
+      X-Phoenix-Cache-Expires:
+      - 04-14-2017 12:15:53
+      X-Phoenix-Cached:
+      - 'false'
+      Content-Security-Policy-Report-Only:
+      - 'default-src https: blob: ''unsafe-inline'' ''unsafe-eval''; img-src https:
+        data:; form-action https:; block-all-mixed-content; report-uri https://cbsi.report-uri.io/r/default/csp/reportOnly;'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":"OK","limit":1,"offset":0,"number_of_page_results":1,"number_of_total_results":128,"status_code":1,"results":[{"id":1}],"version":"1.0"}'
+    http_version: 
+  recorded_at: Wed, 01 Mar 2017 00:00:00 GMT
+- request:
+    method: get
+    uri: https://comicvine.gamespot.com/api/publishers/?api_key=<API_KEY>&field_list=id&format=json&limit=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.8.0
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Powered-By:
+      - PHP/5.6.6
+      Set-Cookie:
+      - device_view=full; expires=Sun, 14-May-2017 19:10:54 GMT; Max-Age=2592000;
+        path=/; httponly
+      - satcv=f0e29241a9c640666ead078e1d8c0a9c; path=/; domain=.comicvine.gamespot.com;
+        HttpOnly
+      Cache-Control:
+      - no-cache
+      Date:
+      - Fri, 14 Apr 2017 19:10:54 GMT
+      X-Phoenix-Cache-Expires:
+      - 04-14-2017 12:15:54
+      X-Phoenix-Cached:
+      - 'false'
+      Content-Security-Policy-Report-Only:
+      - 'default-src https: blob: ''unsafe-inline'' ''unsafe-eval''; img-src https:
+        data:; form-action https:; block-all-mixed-content; report-uri https://cbsi.report-uri.io/r/default/csp/reportOnly;'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":"OK","limit":1,"offset":0,"number_of_page_results":1,"number_of_total_results":6280,"status_code":1,"results":[{"id":4}],"version":"1.0"}'
+    http_version: 
+  recorded_at: Wed, 01 Mar 2017 00:00:00 GMT
+- request:
+    method: get
+    uri: https://comicvine.gamespot.com/api/series_list/?api_key=<API_KEY>&field_list=id&format=json&limit=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.8.0
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Powered-By:
+      - PHP/5.6.6
+      Set-Cookie:
+      - device_view=full; expires=Sun, 14-May-2017 19:10:54 GMT; Max-Age=2592000;
+        path=/; httponly
+      - satcv=68471f45bb7b5f0e6027a02ff11615b4; path=/; domain=.comicvine.gamespot.com;
+        HttpOnly
+      Cache-Control:
+      - no-cache
+      Date:
+      - Fri, 14 Apr 2017 19:10:54 GMT
+      X-Phoenix-Cache-Expires:
+      - 04-14-2017 12:15:54
+      X-Phoenix-Cached:
+      - 'false'
+      Content-Security-Policy-Report-Only:
+      - 'default-src https: blob: ''unsafe-inline'' ''unsafe-eval''; img-src https:
+        data:; form-action https:; block-all-mixed-content; report-uri https://cbsi.report-uri.io/r/default/csp/reportOnly;'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":"OK","limit":1,"offset":0,"number_of_page_results":1,"number_of_total_results":578,"status_code":1,"results":[{"id":1}],"version":"1.0"}'
+    http_version: 
+  recorded_at: Wed, 01 Mar 2017 00:00:00 GMT
+- request:
+    method: get
+    uri: https://comicvine.gamespot.com/api/story_arcs/?api_key=<API_KEY>&field_list=id&format=json&limit=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.8.0
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Powered-By:
+      - PHP/5.6.6
+      Set-Cookie:
+      - device_view=full; expires=Sun, 14-May-2017 19:10:55 GMT; Max-Age=2592000;
+        path=/; httponly
+      - satcv=0e2f74dccd2595fe3ce22736754be8c0; path=/; domain=.comicvine.gamespot.com;
+        HttpOnly
+      Cache-Control:
+      - no-cache
+      Date:
+      - Fri, 14 Apr 2017 19:10:55 GMT
+      X-Phoenix-Cache-Expires:
+      - 04-14-2017 12:15:55
+      X-Phoenix-Cached:
+      - 'false'
+      Content-Security-Policy-Report-Only:
+      - 'default-src https: blob: ''unsafe-inline'' ''unsafe-eval''; img-src https:
+        data:; form-action https:; block-all-mixed-content; report-uri https://cbsi.report-uri.io/r/default/csp/reportOnly;'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":"OK","limit":1,"offset":0,"number_of_page_results":1,"number_of_total_results":3821,"status_code":1,"results":[{"id":27758}],"version":"1.0"}'
+    http_version: 
+  recorded_at: Wed, 01 Mar 2017 00:00:00 GMT
+- request:
+    method: get
+    uri: https://comicvine.gamespot.com/api/teams/?api_key=<API_KEY>&field_list=id&format=json&limit=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.8.0
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Powered-By:
+      - PHP/5.6.6
+      Set-Cookie:
+      - device_view=full; expires=Sun, 14-May-2017 19:10:56 GMT; Max-Age=2592000;
+        path=/; httponly
+      - satcv=87c77a9ed2d425c9f296cd22ce33adbf; path=/; domain=.comicvine.gamespot.com;
+        HttpOnly
+      Cache-Control:
+      - no-cache
+      Date:
+      - Fri, 14 Apr 2017 19:10:56 GMT
+      X-Phoenix-Cache-Expires:
+      - 04-14-2017 12:15:56
+      X-Phoenix-Cached:
+      - 'false'
+      Content-Security-Policy-Report-Only:
+      - 'default-src https: blob: ''unsafe-inline'' ''unsafe-eval''; img-src https:
+        data:; form-action https:; block-all-mixed-content; report-uri https://cbsi.report-uri.io/r/default/csp/reportOnly;'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":"OK","limit":1,"offset":0,"number_of_page_results":1,"number_of_total_results":8207,"status_code":1,"results":[{"id":1800}],"version":"1.0"}'
+    http_version: 
+  recorded_at: Wed, 01 Mar 2017 00:00:00 GMT
+- request:
+    method: get
+    uri: https://comicvine.gamespot.com/api/volumes/?api_key=<API_KEY>&field_list=id&format=json&limit=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.8.0
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Powered-By:
+      - PHP/5.6.6
+      Set-Cookie:
+      - device_view=full; expires=Sun, 14-May-2017 19:10:57 GMT; Max-Age=2592000;
+        path=/; httponly
+      - satcv=7ca62245f41dc84cd34a52a523760a8b; path=/; domain=.comicvine.gamespot.com;
+        HttpOnly
+      Cache-Control:
+      - no-cache
+      Date:
+      - Fri, 14 Apr 2017 19:10:57 GMT
+      X-Phoenix-Cache-Expires:
+      - 04-14-2017 12:15:57
+      X-Phoenix-Cached:
+      - 'false'
+      Content-Security-Policy-Report-Only:
+      - 'default-src https: blob: ''unsafe-inline'' ''unsafe-eval''; img-src https:
+        data:; form-action https:; block-all-mixed-content; report-uri https://cbsi.report-uri.io/r/default/csp/reportOnly;'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":"OK","limit":1,"offset":0,"number_of_page_results":1,"number_of_total_results":85112,"status_code":1,"results":[{"id":766}],"version":"1.0"}'
+    http_version: 
+  recorded_at: Wed, 01 Mar 2017 00:00:00 GMT
+recorded_with: VCR 3.0.3

@@ -1,8 +1,7 @@
 module Marvel
   class Collections
     def call
-      # %i[characters comics creators events series stories]
-      %i[stories]
+      %i[characters comics creators events series stories]
     end
   end
 end

@@ -16,6 +16,11 @@ namespace :db do
 end
 
 namespace :comic_vine do
+  desc 'Fetch and display total count for all resource'
+  task total_count: ['db:setup'] do
+    ComicsScraper['cli.comic_vine.total_count'].call
+  end
+
   desc 'Prepare collection jobs'
   task prepare_collections: ['db:setup'] do
     ComicsScraper['comic_vine.prepare_collection_jobs'].call
@@ -38,6 +43,11 @@ namespace :comic_vine do
 end
 
 namespace :marvel do
+  desc 'Fetch and display total count for all resource'
+  task total_count: ['db:setup'] do
+    ComicsScraper['cli.marvel.total_count'].call
+  end
+
   desc 'Prepare collection jobs'
   task prepare_collections: ['db:setup'] do
     ComicsScraper['marvel.prepare_collection_jobs'].call

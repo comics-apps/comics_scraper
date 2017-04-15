@@ -10,7 +10,8 @@ namespace :db do
 
   namespace :mongo do
     task recreate_indexes: ['db:setup'] do
-      ComicsScraper['cli.create_mongo_indexes'].call
+      service = 'cli.create_mongo_indexes'
+      ComicsScraper[service].call
     end
   end
 end
@@ -18,48 +19,57 @@ end
 namespace :comic_vine do
   desc 'Fetch and display total count for all resource'
   task total_count: ['db:setup'] do
-    ComicsScraper['cli.comic_vine.total_count'].call
+    service = 'cli.comic_vine.total_count'
+    ComicsScraper[service].call
   end
 
   desc 'Prepare collection jobs'
   task prepare_collections: ['db:setup'] do
-    ComicsScraper['comic_vine.prepare_collection_jobs'].call
+    service = 'cli.comic_vine.prepare_collection_jobs'
+    ComicsScraper[service].call
   end
 
   desc 'Prepare collection jobs from specified date'
   task :prepare_collections_from, [:date] => ['db:setup'] do |_task, args|
-    ComicsScraper['comic_vine.prepare_collection_jobs'].call(date: args[:date])
+    service = 'cli.comic_vine.prepare_collection_jobs'
+    ComicsScraper[service].call(date: args[:date])
   end
 
   desc 'Prepare element jobs based on collection jobs'
   task prepare_elements: ['db:setup'] do
-    ComicsScraper['comic_vine.rake.prepare_elements'].call
+    service = 'comic_vine.rake.prepare_elements'
+    ComicsScraper[service].call
   end
 
   desc 'Fetch single resources based on element jobs'
   task fetch_elements: ['db:setup'] do
-    ComicsScraper['comic_vine.rake.fetch_elements'].call
+    service = 'comic_vine.rake.fetch_elements'
+    ComicsScraper[service].call
   end
 end
 
 namespace :marvel do
   desc 'Fetch and display total count for all resource'
   task total_count: ['db:setup'] do
-    ComicsScraper['cli.marvel.total_count'].call
+    service = 'cli.marvel.total_count'
+    ComicsScraper[service].call
   end
 
   desc 'Prepare collection jobs'
   task prepare_collections: ['db:setup'] do
-    ComicsScraper['marvel.prepare_collection_jobs'].call
+    service = 'cli.marvel.prepare_collection_jobs'
+    ComicsScraper[service].call
   end
 
   desc 'Prepare collection jobs from specified date'
   task :prepare_collections_from, [:date] => ['db:setup'] do |_task, args|
-    ComicsScraper['marvel.prepare_collection_jobs'].call(date: args[:date])
+    service = 'cli.marvel.prepare_collection_jobs'
+    ComicsScraper[service].call(date: args[:date])
   end
 
   desc 'Fetch collections based on element jobs'
   task fetch_collections: ['db:setup'] do
-    ComicsScraper['marvel.rake.fetch_collection'].call
+    service = 'marvel.rake.fetch_collection'
+    ComicsScraper[service].call
   end
 end

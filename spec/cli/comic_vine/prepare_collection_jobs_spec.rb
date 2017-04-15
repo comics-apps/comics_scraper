@@ -1,4 +1,4 @@
-RSpec.describe ComicVine::PrepareCollectionJobs do
+RSpec.describe Cli::ComicVine::PrepareCollectionJobs do
   describe '#call' do
     let(:job_repo) { JobRepo.new(ComicsScraper['persistence.rom']) }
     let(:jobs) { job_repo.jobs }
@@ -12,7 +12,7 @@ RSpec.describe ComicVine::PrepareCollectionJobs do
 
       it 'creates collection job' do
         VCR.use_cassette('comicvine_prepare_collection_jobs') do
-          ComicsScraper['comic_vine.prepare_collection_jobs'].call
+          ComicsScraper['cli.comic_vine.prepare_collection_jobs'].call
 
           expect(jobs.count).to eq(1)
           expect(job.type).to eq('comic_vine_collection')
@@ -31,7 +31,7 @@ RSpec.describe ComicVine::PrepareCollectionJobs do
 
       it 'creates collection job' do
         VCR.use_cassette('comicvine_prepare_collection_jobs_movies') do
-          ComicsScraper['comic_vine.prepare_collection_jobs'].call(
+          ComicsScraper['cli.comic_vine.prepare_collection_jobs'].call(
             date: '2017-01-01'
           )
 

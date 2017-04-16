@@ -1,6 +1,6 @@
 require 'import'
 
-module Base
+module Shared
   class SplitArrayToHalf
     def call(offset:, limit:)
       array = (offset..(offset + limit - 1)).to_a

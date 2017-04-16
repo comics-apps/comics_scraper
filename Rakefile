@@ -69,7 +69,7 @@ namespace :marvel do
 
   desc 'Fetch collections based on element jobs'
   task fetch_collections: ['db:setup'] do
-    service = 'marvel.rake.fetch_collection'
+    service = 'cli.marvel.fetch_collection'
     ComicsScraper[service].call
   end
 end

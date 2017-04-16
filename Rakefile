@@ -43,7 +43,7 @@ namespace :comic_vine do
 
   desc 'Fetch single resources based on element jobs'
   task fetch_elements: ['db:setup'] do
-    service = 'comic_vine.rake.fetch_elements'
+    service = 'cli.comic_vine.fetch_elements'
     ComicsScraper[service].call
   end
 end

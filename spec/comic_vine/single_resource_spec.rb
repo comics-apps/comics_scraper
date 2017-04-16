@@ -5,108 +5,108 @@ RSpec.describe ComicVine::SingleResource do
 
   describe '#call' do
     context 'with characters resource' do
-      let(:collection_resource) { :characters }
-      let(:single_resource) { :character }
+      let(:input_resource) { :characters }
+      let(:output_result) { :character }
 
-      include_examples 'single resource'
+      include_examples 'match resource'
     end
 
     context 'with concepts resource' do
-      let(:collection_resource) { :concepts }
-      let(:single_resource) { :concept }
+      let(:input_resource) { :concepts }
+      let(:output_result) { :concept }
 
-      include_examples 'single resource'
+      include_examples 'match resource'
     end
 
     context 'with episodes resource' do
-      let(:collection_resource) { :episodes }
-      let(:single_resource) { :episode }
+      let(:input_resource) { :episodes }
+      let(:output_result) { :episode }
 
-      include_examples 'single resource'
+      include_examples 'match resource'
     end
 
     context 'with issues resource' do
-      let(:collection_resource) { :issues }
-      let(:single_resource) { :issue }
+      let(:input_resource) { :issues }
+      let(:output_result) { :issue }
 
-      include_examples 'single resource'
+      include_examples 'match resource'
     end
 
     context 'with locations resource' do
-      let(:collection_resource) { :locations }
-      let(:single_resource) { :location }
+      let(:input_resource) { :locations }
+      let(:output_result) { :location }
 
-      include_examples 'single resource'
+      include_examples 'match resource'
     end
 
     context 'with movies resource' do
-      let(:collection_resource) { :movies }
-      let(:single_resource) { :movie }
+      let(:input_resource) { :movies }
+      let(:output_result) { :movie }
 
-      include_examples 'single resource'
+      include_examples 'match resource'
     end
 
     context 'with objects resource' do
-      let(:collection_resource) { :objects }
-      let(:single_resource) { :object }
+      let(:input_resource) { :objects }
+      let(:output_result) { :object }
 
-      include_examples 'single resource'
+      include_examples 'match resource'
     end
 
     context 'with origins resource' do
-      let(:collection_resource) { :origins }
-      let(:single_resource) { :origin }
+      let(:input_resource) { :origins }
+      let(:output_result) { :origin }
 
-      include_examples 'single resource'
+      include_examples 'match resource'
     end
 
-    context 'with origins resource' do
-      let(:collection_resource) { :people }
-      let(:single_resource) { :person }
+    context 'with people resource' do
+      let(:input_resource) { :people }
+      let(:output_result) { :person }
 
-      include_examples 'single resource'
+      include_examples 'match resource'
     end
 
     context 'with powers resource' do
-      let(:collection_resource) { :powers }
-      let(:single_resource) { :power }
+      let(:input_resource) { :powers }
+      let(:output_result) { :power }
 
-      include_examples 'single resource'
+      include_examples 'match resource'
     end
 
     context 'with publishers resource' do
-      let(:collection_resource) { :publishers }
-      let(:single_resource) { :publisher }
+      let(:input_resource) { :publishers }
+      let(:output_result) { :publisher }
 
-      include_examples 'single resource'
+      include_examples 'match resource'
     end
 
     context 'with series_list resource' do
-      let(:collection_resource) { :series_list }
-      let(:single_resource) { :series }
+      let(:input_resource) { :series_list }
+      let(:output_result) { :series }
 
-      include_examples 'single resource'
+      include_examples 'match resource'
     end
 
     context 'with story_arcs resource' do
-      let(:collection_resource) { :story_arcs }
-      let(:single_resource) { :story_arc }
+      let(:input_resource) { :story_arcs }
+      let(:output_result) { :story_arc }
 
-      include_examples 'single resource'
+      include_examples 'match resource'
     end
 
     context 'with teams resource' do
-      let(:collection_resource) { :teams }
-      let(:single_resource) { :team }
+      let(:input_resource) { :teams }
+      let(:output_result) { :team }
 
-      include_examples 'single resource'
+      include_examples 'match resource'
     end
 
     context 'with volumes resource' do
-      let(:collection_resource) { :volumes }
-      let(:single_resource) { :volume }
+      let(:input_resource) { :volumes }
+      let(:output_result) { :volume }
 
-      include_examples 'single resource'
+      include_examples 'match resource'
     end
   end
 end

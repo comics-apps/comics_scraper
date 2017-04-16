@@ -12,13 +12,12 @@ module Cli
         repo = JobRepo.new(rom)
 
         loop do
-          job = find_job(repo)
+          job = find_job(repo: repo)
           break unless job
 
-          resource_ids(job).each do |resource_id|
-            attributes = prepare_attrs(id: resource_id,
-                                       resource: job.settings['collection'])
-            repo.create(attributes)
+          resource_ids(job: job).each do |resource_id|
+            repo.create(prepare_attrs(id: resource_id,
+                                      resource: job.settings['collection']))
           end
 
           repo.delete_single(id: job.id)
@@ -27,7 +26,7 @@ module Cli
 
       private
 
-      def find_job(repo)
+      def find_job(repo:)
         repo.find_random(type: 'comic_vine_collection')
       end
 
@@ -35,7 +34,7 @@ module Cli
         JobRepo.new(rom)
       end
 
-      def resource_ids(job)
+      def resource_ids(job:)
         sleep(1)
         fetch_ids.call(
           resource: job.settings['collection'],

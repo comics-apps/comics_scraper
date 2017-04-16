@@ -37,7 +37,7 @@ namespace :comic_vine do
 
   desc 'Prepare element jobs based on collection jobs'
   task prepare_elements: ['db:setup'] do
-    service = 'comic_vine.rake.prepare_elements'
+    service = 'cli.comic_vine.prepare_element_jobs'
     ComicsScraper[service].call
   end
 

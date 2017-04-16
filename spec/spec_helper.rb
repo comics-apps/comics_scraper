@@ -7,6 +7,8 @@ ENV['MONGO_LOGGER_LEVEL'] = ::Logger::WARN.to_s
 
 require_relative '../system/boot'
 
+Dir[File.dirname(__FILE__) + '/support/**/*.rb'].each { |f| require f }
+
 VCR.configure do |c|
   c.cassette_library_dir = File.join(File.dirname(__FILE__), 'vcr')
   c.hook_into :webmock

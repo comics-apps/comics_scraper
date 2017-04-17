@@ -5,7 +5,7 @@ gem 'dry-system'
 
 # Database persistence
 gem 'pg'
-gem 'rom-mongo', github: 'rom-rb/rom-mongo'
+gem 'rom-mongo'
 gem 'rom-repository'
 gem 'rom-sql'
 

@@ -14,6 +14,12 @@ namespace :db do
       ComicsScraper[service].call
     end
   end
+
+  desc 'Migrate the default database (options [version_number])]'
+  task :migrate_default, [:version] => :rom_configuration do |_, args|
+    service = 'cli.migrate_default'
+    ComicsScraper[service].call(version: args[:version])
+  end
 end
 
 namespace :comic_vine do

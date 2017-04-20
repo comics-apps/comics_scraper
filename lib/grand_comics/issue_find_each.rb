@@ -9,7 +9,9 @@ module GrandComics
 
     def call
       0.upto(issue_count.call / LIMIT).each do |offset|
-        issues = GcdIssueRepo.new(rom).find_each(offset: offset * LIMIT, limit: LIMIT)
+        issues = GcdIssueRepo.new(rom).find_each(
+          offset: offset * LIMIT, limit: LIMIT
+        )
         issues.each do |issue|
           yield(issue)
         end

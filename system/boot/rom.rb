@@ -6,11 +6,8 @@ ComicsScraper.namespace(:persistence) do |container|
       require 'rom-repository'
       require 'rom-sql'
 
-      if ENV['MONGO_LOGGER_LEVEL']
-        Mongo::Logger.level = ENV['MONGO_LOGGER_LEVEL'].to_i
-      else
-        Mongo::Logger.level = ::Logger::WARN
-      end
+      logger_level = ENV['MONGO_LOGGER_LEVEL']
+      Mongo::Logger.level = logger_level ? logger_level.to_i : ::Logger::WARN
 
       Sequel.database_timezone = :utc
       Sequel.application_timezone = :local
@@ -22,9 +19,6 @@ ComicsScraper.namespace(:persistence) do |container|
         mongodb: [:mongo, ENV['MONGO_URL']],
         gcd: [:sql, ENV['GCD_URL']]
       )
-      Dir.glob('lib/persistence/models/*.rb').each do |f|
-        require f.gsub('lib/', '')
-      end
       config.auto_registration(container.root.join('lib/persistence'),
                                namespace: false)
       Dir.glob('lib/persistence/repositories/*.rb').each do |f|

@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gem 'dry-system'
 
 # Database persistence
+gem 'mysql'
 gem 'pg'
 gem 'rom-mongo'
 gem 'rom-repository'

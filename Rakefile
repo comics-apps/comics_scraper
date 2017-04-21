@@ -59,6 +59,11 @@ namespace :grand_comics do
   task prepare_issues: ['db:setup'] do
     ComicsScraper['cli.grand_comics.prepare_issue_jobs'].call
   end
+
+  desc 'Fetch issue covers'
+  task fetch_issue_covers: ['db:setup'] do
+    ComicsScraper['cli.grand_comics.fetch_issue_covers'].call
+  end
 end
 
 namespace :marvel do

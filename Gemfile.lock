@@ -54,10 +54,13 @@ GEM
     inflecto (0.0.2)
     marvel-api (0.1.0)
       faraday
+    mini_portile2 (2.1.0)
     mongo (2.4.1)
       bson (>= 4.2.1, < 5.0.0)
     multipart-post (2.0.0)
     mysql (2.9.1)
+    nokogiri (1.7.1)
+      mini_portile2 (~> 2.1.0)
     origin (2.3.0)
     parser (2.4.0.0)
       ast (~> 2.2)
@@ -132,6 +135,7 @@ DEPENDENCIES
   dry-system
   marvel-api
   mysql
+  nokogiri
   pg
   rake
   rom-mongo

@@ -14,6 +14,7 @@ gem 'rom-sql'
 gem 'comic_vine-api'
 gem 'dotenv'
 gem 'marvel-api'
+gem 'nokogiri'
 gem 'rake'
 gem 'rubocop'
 

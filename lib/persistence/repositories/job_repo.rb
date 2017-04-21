@@ -6,7 +6,7 @@ class JobRepo < ROM::Repository[:jobs]
   end
 
   def find_random(type:)
-    jobs.where(type: type).order(Sequel.lit('RANDOM()')).first
+    jobs.where(type: type).order(Sequel.lit('RANDOM()')).limit(1).first
   end
 
   def delete_single(id:)

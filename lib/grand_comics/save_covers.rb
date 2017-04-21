@@ -14,7 +14,9 @@ module GrandComics
       covers.each do |cover|
         id = File.basename(cover).split('.')[0].to_i
         if id > 0
-          repo.create(id: id, issue_id: issue_id, url: cover, position: i)
+          unless repo.find(id: id)
+            repo.create(id: id, issue_id: issue_id, url: cover, position: i)
+          end
         end
         i += 1
       end
